@@ -115,12 +115,18 @@ const usuariosGet = async (req= request, res= response) => {
     
   const usuariosDelet = async (req, res= response) => {
     // res.send('Hello World')
-const {id} = req.params;
+    const {id} = req.params;
+    // const uid = req.uid;
 //este borra el usuario como tal en la base de datos
 // const usuario = await Usuario.findByIdAndDelete( id );
 
-const usuario = await Usuario.findByIdAndUpdate(id,{estado:false});
-    res.json({usuario    })
+    // const usuario = await Usuario.findByIdAndUpdate(id,{estado:false});
+
+    const usuarioAutenticado = req.usuario
+
+    res.json({usuarioAutenticado
+      // ,usuario
+    })
   }
 
 
